@@ -1,0 +1,28 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CategoryGraphQLEntity {
+  id: ID!
+  description: String!
+}
+
+type CourseGraphQLEntity {
+  id: ID!
+  description: String!
+  categories: [CategoryGraphQLEntity!]!
+}
+
+type Query {
+  getAllCategories: [CategoryGraphQLEntity!]!
+  getAllCourses: [CourseGraphQLEntity!]!
+}
+
+type Mutation {
+  createCourse(input: CreateCourseGraphQLInput!): CourseGraphQLEntity!
+}
+
+input CreateCourseGraphQLInput {
+  description: String!
+  categoriesIds: [Float!]!
+}
